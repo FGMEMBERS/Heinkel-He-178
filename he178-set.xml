@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- <PropertyList include="he178-jsbsim-cnf.xml"> -->
+<PropertyList include="he178-yasim-cnf.xml">
+
+  <sim>
+    <description>Heinkel He 178</description>
+    <author>Emmanuel BARANGER (3D/FDM)</author>
+  </sim>
+
+</PropertyList>
+

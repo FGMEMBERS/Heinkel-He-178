@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Heinkel He 178
+
+     2010 Updated BARANGER Emmanuel
+ 
+     sources      : http://en.wikipedia.org/wiki/Heinkel_He_178
+
+     Wingspan     : 7.20 m         (   23 ft  3 in )
+     Lenght       : 7.48 m         (   24 ft  6 in )
+     Height       : 2.10 m         (    6 ft 10 in )
+     Weight       : 1620 kg        ( 3572 lb       )
+     Engines      : HeS 3 turbojet (  992 lbf      )
+     Max speed    :  598 km/h      (  323 kt       )
+-->
+
+<airplane mass="3572">
+
+  <approach speed="80" aoa="6" fuel="0.3">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.3"/>
+    <control-setting axis="/controls/flight/flaps" value="1"/>
+    <control-setting axis="/controls/gear/gear-down" value="1"/>
+  </approach>
+
+  <cruise speed="300" alt="6000" fuel="0.7">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.7"/>
+    <control-setting axis="/controls/flight/flaps" value="0.0"/>
+    <control-setting axis="/controls/gear/gear-down" value="0"/>
+  </cruise>
+
+  <cockpit x="1.962" y="0.0" z="0.173"/>
+
+  <!-- Fuselage with engine on top -->
+  <fuselage ax="3.724" ay="0" az="-0.468" bx="-3.738" by="0" bz="-0.025" width="0.980" taper="0.5" midpoint="0.2"/>
+
+  <wing x="0.415" y="0.297" z="0.126"
+        chord="1.765" 
+        length="3.3" 
+        taper="0.5"
+        sweep="-1"
+        camber="0.01"
+        dihedral="5">
+        <stall aoa="16" width="1" peak="1.3"/>
+        <flap0 start="0.017" end="0.573" lift="1.3" drag="1.5"/>
+        <flap1 start="0.573" end="0.945" lift="1.1" drag="1.0"/>
+
+        <control-input axis="/controls/flight/flaps" control="FLAP0"/> 
+        <control-input axis="/controls/flight/aileron" control="FLAP1" square="true" split="true"/> 
+        <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
+
+        <control-output control="FLAP0" prop="/surface-positions/flaps-pos-norm"/>
+
+        <control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
+        <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
+        <control-output control="FLAP1" prop="/surface-positions/aileron-pos-norm"/>
+
+        <control-speed control="FLAP0" transition-time="3"/>
+   </wing>
+
+   <hstab x="-2.855" y="0.155" z="-0.113"
+         chord="1.055" 
+         length="1.17" 
+         taper="0.35"
+         sweep="8">
+         <stall aoa="14" width="1" peak="1.3"/>
+         <flap0 start="0.1" end="0.94" lift="1.5" drag="1.5"/>
+
+         <control-input axis="/controls/flight/elevator" square="false" control="FLAP0" />
+         <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+  </hstab>
+
+  <vstab x="-2.918" y="0.00" z="0.138"
+         chord="1.58" 
+         length="1.43" 
+         taper="0.25"
+         sweep="6">
+         <stall aoa="12" width="1" peak="1.5"/>
+         <flap0 start="0.05" end="1" lift="1.5" drag="1.3"/>
+
+         <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
+         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
+  </vstab>
+
+  <!--  Heinkel HeS 3
+
+                 source       : http://en.wikipedia.org/wiki/Heinkel_HeS_3
+
+                 type         : Turbojet
+                 weight       : 360 kg ( 794 lb )
+                 Compression  : 2.8:1
+                 power        : 992 lbf
+  -->
+  <jet x="-0.670" y="0" z="-0.28"
+       n1-idle="30" 
+       n1-max="90" 
+       n2-idle="35" 
+       n2-max="95"
+       egt="850" 
+       tsfc="1.39"
+       mass="794" 
+       thrust="992">
+       <actionpt x="-3.738" y="0" z="-0.025"/>
+       <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
+  </jet>
+  
+  <!-- Undercarriage -->
+  <!-- left main -->
+  <gear x="1.339" y="0.786" z="-1.565"
+        retract-time="3"
+        compression="0.30"
+        spring="1"
+        damp="2">
+        <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+
+        <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
+
+        <control-speed control="EXTEND" transition-time="7"/>
+  </gear>
+
+  <!-- right main -->
+  <gear x="1.339" y="-0.786" z="-1.565"
+        retract-time="3"
+        compression="0.30"
+        spring="1"
+        damp="2">
+        <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+
+        <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
+
+        <control-speed control="EXTEND" transition-time="7"/>
+  </gear>
+
+  <!-- nose -->
+  <gear x="-2.518" y="0" z="-0.891"
+        retract-time="3"
+        compression="0.30"
+        spring="1"
+        damp="2">
+        <control-input axis="/controls/flight/rudder" control="STEER" src0="-0.5" src1="0.5" dst0="0.1" dst1="-0.1"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+
+        <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
+
+        <control-speed control="EXTEND" transition-time="7"/>
+  </gear>
+
+  <!-- Internal tanks 2 x 280 liter wings -->
+  <tank x="1.2" y="0" z="-0.7" jet="true" capacity="1250"/>
+
+  <!-- CG Theorique
+  <ballast x="3.9" y="0.0" z="-1.55" mass="1000"/> -->
+
+</airplane>
+
