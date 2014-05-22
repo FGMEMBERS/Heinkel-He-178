@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
-
+  
   <fx>
-
+    
     <engine>
       <name>engine</name>
       <path>Sounds/jet.wav</path>
@@ -21,8 +21,8 @@
       </pitch>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
-     </engine>
-
+    </engine>
+    
     <engine>
       <name>whine</name>
       <path>Sounds/turbojet_fan.wav</path>
@@ -42,46 +42,7 @@
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </engine>
-
-    <engine>
-      <name>engine</name>
-      <path>Sounds/jet.wav</path>
-      <mode>looped</mode>
-      <condition>
-        <property>/engines/engine[1]/running</property>
-      </condition>
-      <volume>
-        <property>/engines/engine[1]/prop-thrust</property>
-        <factor type="double">0.00013</factor>
-      </volume>
-      <pitch>
-        <property>/engines/engine[1]/n1</property>
-        <factor>0.2</factor>
-      </pitch>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
-    </engine>
-
-    <engine>
-      <name>whine</name>
-      <path>Sounds/turbojet_fan.wav</path>
-      <mode>looped</mode>
-      <condition>
-        <property>/engines/engine[1]/running</property>
-      </condition>
-      <volume>
-        <property>/engines/engine[1]/n2</property>
-        <factor type="double">0.0025</factor>
-      </volume>
-      <pitch>
-        <property>/engines/engine[1]/n2</property>
-        <factor>0.02</factor>
-        <offset>-0.1</offset>
-      </pitch>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
-    </engine>
-
+    
     <rumble>
       <name>rumble</name>
       <mode>looped</mode>
@@ -100,7 +61,7 @@
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </rumble>
-
+    
     <rumble>
       <name>rumble</name>
       <mode>looped</mode>
@@ -116,7 +77,7 @@
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </rumble>
-
+    
     <rumble>
       <name>rumble</name>
       <mode>looped</mode>
@@ -132,7 +93,7 @@
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </rumble>
-
+    
     <gear>
       <name>gear</name>
       <mode>in-transit</mode>
@@ -146,7 +107,7 @@
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </gear>
-
+    
     <gear>
       <name>gear-lock</name>
       <path>Sounds/gear-lck.wav</path>
@@ -159,7 +120,7 @@
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </gear>
-
+    
     <gear>
       <name>gear-lock</name>
       <path>Sounds/gear-lck.wav</path>
@@ -172,7 +133,7 @@
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </gear>
-
+    
     <gear>
       <name>gear</name>
       <mode>in-transit</mode>
@@ -186,7 +147,7 @@
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </gear>
-
+    
     <gear>
       <name>gear-lock</name>
       <path>Sounds/gear-lck.wav</path>
@@ -199,7 +160,7 @@
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </gear>
-
+    
     <gear>
       <name>gear-lock</name>
       <path>Sounds/gear-lck.wav</path>
@@ -212,7 +173,7 @@
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </gear>
-
+    
     <gear>
       <name>gear</name>
       <mode>in-transit</mode>
@@ -226,7 +187,7 @@
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </gear>
-
+    
     <gear>
       <name>gear-lock</name>
       <path>Sounds/gear-lck.wav</path>
@@ -239,7 +200,7 @@
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </gear>
-
+    
     <gear>
       <name>gear-lock</name>
       <path>Sounds/gear-lck.wav</path>
@@ -252,7 +213,7 @@
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </gear>
-
+    
     <squeal>
       <name>squeal</name>
       <path>Sounds/squeal.wav</path>
@@ -280,7 +241,7 @@
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </squeal>
-
+    
     <squeal>
       <name>squeal</name>
       <path>Sounds/squeal.wav</path>
@@ -308,7 +269,7 @@
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </squeal>
-
+    
     <squeal>
       <name>squeal</name>
       <path>Sounds/squeal.wav</path>
@@ -336,7 +297,7 @@
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </squeal>
-
+    
     <flap>
       <name>flaps</name>
       <mode>in-transit</mode>
@@ -348,7 +309,7 @@
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </flap>
-
+    
     <flap>
       <name>flaps</name>
       <mode>in-transit</mode>
@@ -360,7 +321,7 @@
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </flap>
-
+    
     <spoiler>
       <name>spoilers</name>
       <mode>in-transit</mode>
@@ -372,7 +333,7 @@
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </spoiler>
-
+    
     <spoiler>
       <name>spoilers</name>
       <mode>in-transit</mode>
@@ -384,7 +345,7 @@
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </spoiler>
-
+    
     <spoiler>
       <name>spoilers</name>
       <mode>in-transit</mode>
@@ -396,7 +357,7 @@
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </spoiler>
-
+    
     <spoiler>
       <name>spoilers</name>
       <mode>in-transit</mode>
@@ -408,7 +369,7 @@
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </spoiler>
-
+    
     <wind>
       <name>wind</name>
       <mode>looped</mode>
@@ -427,7 +388,7 @@
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </wind>
-
+    
     <stall>
       <name>stall</name>
       <path>Sounds/stall.wav</path>
@@ -439,7 +400,7 @@
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </stall>
-
+    
   </fx>
-
+  
 </PropertyList>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
@@ -13,9 +13,9 @@
       var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
       var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
       
-      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
-      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
-    
+      var crew_door = self.getNode("sim/model/door-positions/crew/position-norm", 1);
+      var passenger_door = self.getNode("sim/model/door-positions/passenger/position-norm", 1);
+      
       crew_door.alias(float_0);
       passenger_door.alias(float_1);
     </load>
@@ -45,11 +45,15 @@
     <object-name>porteAG</object-name>
     <object-name>porteAD</object-name>
     <object-name>canopy</object-name>
-
-    <object-name>roueA</object-name>
-    <object-name>roueG</object-name>
-    <object-name>roueD</object-name>
+    <object-name>pito</object-name>
+    
     <object-name>trous</object-name>
+    <object-name>axeG</object-name>
+    <object-name>roueG</object-name>
+    <object-name>axeD</object-name>
+    <object-name>roueD</object-name>
+    <object-name>axeA</object-name>
+    <object-name>roueA</object-name>
 
     <!-- Objets transparents -->
     <object-name>vitres</object-name>
@@ -74,44 +78,24 @@
     <object-name>porteAG</object-name>
     <object-name>porteAD</object-name>
     <object-name>canopy</object-name>
-
-    <object-name>roueA</object-name>
-    <object-name>roueG</object-name>
-    <object-name>roueD</object-name>
+    <object-name>pito</object-name>
+    
     <object-name>trous</object-name>
-
+    <object-name>axeG</object-name>
+    <object-name>roueG</object-name>
+    <object-name>axeD</object-name>
+    <object-name>roueD</object-name>
+    <object-name>axeA</object-name>
+    <object-name>roueA</object-name>
+    
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
-<!--
-    <diffuse>
-      <red-prop>diffuse/red</red-prop>
-      <green-prop>diffuse/green</green-prop>
-      <blue-prop>diffuse/blue</blue-prop>
-    </diffuse>
-
-    <ambient>
-      <red-prop>ambient/red</red-prop>
-      <green-prop>ambient/green</green-prop>
-      <blue-prop>ambient/blue</blue-prop>
-    </ambient>
--->
     <specular>
       <red-prop>specular/red</red-prop>
       <green-prop>specular/green</green-prop>
       <blue-prop>specular/blue</blue-prop>
     </specular>
-
-    <emission>
-      <red-prop>emission/red</red-prop>
-      <green-prop>emission/green</green-prop>
-      <blue-prop>emission/blue</blue-prop>
-    </emission>
-<!--
-    <shininess>
-      <shininess-prop>shininess</shininess-prop>
-    </shininess>
--->
   </animation>
 
   <effect>
@@ -132,49 +116,45 @@
     <object-name>porteAG</object-name>
     <object-name>porteAD</object-name>
     <object-name>canopy</object-name>
+    <object-name>pito</object-name>
   </effect>
 
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Heinkel-He-178/Models/Effects/Glass/glass</inherits-from>
     <object-name>vitres</object-name>
     <object-name>vitrescanopy</object-name>
-  </animation>
-
-  <animation>
-    <type>noshadow</type>
+  </effect>
+  
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
     <object-name>vitres</object-name>
     <object-name>vitrescanopy</object-name>
-  </animation>
-
+  </effect>
+  
   <!-- Une ombre pour OSG -->
   <model>
-    <name>shadowOSG</name>
     <path>Aircraft/Heinkel-He-178/Models/shadow.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -1.175 </z-m>
+    </offsets>
   </model>
 
   <!-- Particules OSG -->
   <model>
-    <path>Aircraft/Heinkel-He-178/Models/effects/flammes/flammes.xml</path>
+    <path>Aircraft/Heinkel-He-178/Models/Effects/flammes/flammes.xml</path>
     <offsets>
-      <x-m>  3.411 </x-m>
+      <x-m>  3.811 </x-m>
       <y-m>  0.000 </y-m>
       <z-m> -0.024 </z-m>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/Heinkel-He-178/Models/effects/smoke/smoke.xml</path>
-    <offsets>
-      <x-m>  3.737 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -0.024 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Heinkel-He-178/Models/effects/trail/trail.xml</path>
+    <path>Aircraft/Heinkel-He-178/Models/Effects/smoke/smoke.xml</path>
     <offsets>
       <x-m>  3.737 </x-m>
       <y-m>  0.000 </y-m>
@@ -183,7 +163,16 @@
   </model>
 
   <model>
-    <path>Aircraft/Heinkel-He-178/Models/effects/tiptrail/tiptrail.xml</path>
+    <path>Aircraft/Heinkel-He-178/Models/Effects/trail/trail.xml</path>
+    <offsets>
+      <x-m>  3.737 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.024 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Heinkel-He-178/Models/Effects/tiptrail/tiptrail.xml</path>
     <offsets>
       <x-m> -0.282 </x-m>
       <y-m> -3.490 </y-m>
@@ -192,7 +181,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Heinkel-He-178/Models/effects/tiptrail/tiptrail.xml</path>
+    <path>Aircraft/Heinkel-He-178/Models/Effects/tiptrail/tiptrail.xml</path>
     <offsets>
       <x-m> -0.282 </x-m>
       <y-m>  3.490 </y-m>
@@ -203,7 +192,7 @@
   <!-- Effets sur le sol -->
   <!-- Roue gauche -->
   <model>
-    <path>Aircraft/Heinkel-He-178/Models/effects/ground/ground0.xml</path>
+    <path>Aircraft/Heinkel-He-178/Models/Effects/ground/ground0.xml</path>
     <offsets>
       <x-m> -1.339 </x-m>
       <y-m> -0.786 </y-m>
@@ -213,7 +202,7 @@
 
   <!-- Roue droite -->
   <model>
-    <path>Aircraft/Heinkel-He-178/Models/effects/ground/ground1.xml</path>
+    <path>Aircraft/Heinkel-He-178/Models/Effects/ground/ground1.xml</path>
     <offsets>
       <x-m> -1.339 </x-m>
       <y-m>  0.786 </y-m>
@@ -223,7 +212,7 @@
 
   <!-- Roulette -->
   <model>
-    <path>Aircraft/Heinkel-He-178/Models/effects/ground/ground2.xml</path>   
+    <path>Aircraft/Heinkel-He-178/Models/Effects/ground/ground2.xml</path>   
     <offsets>
       <x-m>  2.518 </x-m>
       <y-m>  0.000 </y-m>
@@ -548,6 +537,7 @@
   <!-- Rentrée des roues -->
   <animation>
     <type>rotate</type>
+    <object-name>axeG</object-name>
     <object-name>roueG</object-name>
     <property>gear/gear[0]/position-norm</property>
     <interpolation>
@@ -568,6 +558,7 @@
 
   <animation>
     <type>translate</type>
+    <object-name>axeG</object-name>
     <object-name>roueG</object-name>
     <property>gear/gear[0]/position-norm</property>
     <interpolation>
@@ -588,6 +579,7 @@
 
   <animation>
     <type>translate</type>
+    <object-name>axeG</object-name>
     <object-name>roueG</object-name>
     <property>gear/gear[0]/position-norm</property>
     <interpolation>
@@ -608,6 +600,7 @@
 
   <animation>
     <type>rotate</type>
+    <object-name>axeD</object-name>
     <object-name>roueD</object-name>
     <property>gear/gear[1]/position-norm</property>
     <interpolation>
@@ -628,6 +621,7 @@
 
   <animation>
     <type>translate</type>
+    <object-name>axeD</object-name>
     <object-name>roueD</object-name>
     <property>gear/gear[1]/position-norm</property>
     <interpolation>
@@ -648,6 +642,7 @@
 
   <animation>
     <type>translate</type>
+    <object-name>axeD</object-name>
     <object-name>roueD</object-name>
     <property>gear/gear[1]/position-norm</property>
     <interpolation>
@@ -668,6 +663,7 @@
 
   <animation>
     <type>rotate</type>
+    <object-name>axeA</object-name>
     <object-name>roueA</object-name>
     <property>gear/gear[2]/position-norm</property>
     <interpolation>
@@ -746,9 +742,23 @@
   </animation>
 
   <animation>
+    <type>pick</type>
+    <object-name>AllCanopy</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
     <type>translate</type>
     <object-name>AllCanopy</object-name>
-    <property>/instrumentation/doors/crew/position-norm</property>
+    <property>sim/model/door-positions/crew/position-norm</property>
     <factor> 0.64 </factor>
     <axis>
       <x> 1 </x>
@@ -760,7 +770,7 @@
   <animation>
     <type>translate</type>
     <object-name>AllCanopy</object-name>
-    <property>/instrumentation/doors/crew/position-norm</property>
+    <property>sim/model/door-positions/crew/position-norm</property>
     <factor> 0.14 </factor>
     <axis>
       <x> 0 </x>

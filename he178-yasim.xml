@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
-<!-- Heinkel He 178
-
-     2010 Updated BARANGER Emmanuel
+<!-- Heinkel He 178 : 2010 BARANGER Emmanuel
+            Updated : 2014 BARANGER Emmanuel
  
      sources      : http://en.wikipedia.org/wiki/Heinkel_He_178
 
@@ -13,10 +12,9 @@
      Engines      : HeS 3 turbojet (  992 lbf      )
      Max speed    :  598 km/h      (  323 kt       )
 -->
+<airplane mass="3572" version="YASIM_VERSION_CURRENT">
 
-<airplane mass="3572">
-
-  <approach speed="80" aoa="6" fuel="0.3">
+  <approach speed="80" aoa="4" fuel="0.3">
     <control-setting axis="/controls/engines/engine[0]/throttle" value="0.3"/>
     <control-setting axis="/controls/flight/flaps" value="1"/>
     <control-setting axis="/controls/gear/gear-down" value="1"/>
@@ -40,9 +38,9 @@
         sweep="-1"
         camber="0.01"
         dihedral="5">
-        <stall aoa="16" width="1" peak="1.3"/>
-        <flap0 start="0.017" end="0.573" lift="1.3" drag="1.5"/>
-        <flap1 start="0.573" end="0.945" lift="1.1" drag="1.0"/>
+        <stall aoa="20" width="1" peak="1.5"/>
+        <flap0 start="0.085" end="0.490" lift="1.7" drag="1.9"/>
+        <flap1 start="0.490" end="0.945" lift="1.3" drag="1.1"/>
 
         <control-input axis="/controls/flight/flaps" control="FLAP0"/> 
         <control-input axis="/controls/flight/aileron" control="FLAP1" square="true" split="true"/> 
@@ -62,8 +60,8 @@
          length="1.17" 
          taper="0.35"
          sweep="8">
-         <stall aoa="14" width="1" peak="1.3"/>
-         <flap0 start="0.1" end="0.94" lift="1.5" drag="1.5"/>
+         <stall aoa="18" width="1" peak="1.5"/>
+         <flap0 start="0.1" end="0.94" lift="1.5" drag="1.2"/>
 
          <control-input axis="/controls/flight/elevator" square="false" control="FLAP0" />
          <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
@@ -76,8 +74,8 @@
          length="1.43" 
          taper="0.25"
          sweep="6">
-         <stall aoa="12" width="1" peak="1.5"/>
-         <flap0 start="0.05" end="1" lift="1.5" drag="1.3"/>
+         <stall aoa="16" width="1" peak="1.5"/>
+         <flap0 start="0.05" end="1" lift="1.2" drag="1.1"/>
 
          <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
          <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
@@ -94,7 +92,7 @@
                  Compression  : 2.8:1
                  power        : 992 lbf
   -->
-  <jet x="-0.670" y="0" z="-0.28"
+  <jet x="-1" y="0" z="-0.25"
        n1-idle="30" 
        n1-max="90" 
        n2-idle="35" 
@@ -155,8 +153,7 @@
   <!-- Internal tanks 2 x 280 liter wings -->
   <tank x="1.2" y="0" z="-0.7" jet="true" capacity="1250"/>
 
-  <!-- CG Theorique
-  <ballast x="3.9" y="0.0" z="-1.55" mass="1000"/> -->
+  <!-- Mass displacment
+  <ballast x="-2" y="0" z="-1" mass="200"/> -->
 
 </airplane>
-
